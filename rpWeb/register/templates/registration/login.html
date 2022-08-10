@@ -1,0 +1,35 @@
+{% extends "chat/base.html" %}
+
+{% block title %} login {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<style>
+    .content {
+        position: absolute;
+        top: 200px;
+        left: 40%;
+        color: whitesmoke;
+        background-color:rgb(18, 17, 16);
+    }
+
+    a {
+        color: lightgray;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: gray;
+    }
+</style>
+
+<div class="content">
+    <form method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <p>Don't have an account? Create one <a href="register/">Here</a>!</p>
+        <button type="submit" class="btn btn-dark">login</button>
+    </form>
+</div>
+{% endblock %}
