@@ -13,6 +13,15 @@
         color: whitesmoke;
         background-color:rgb(18, 17, 16);
     }
+
+    a {
+        color: lightgray;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: lightgray;
+    }
 </style>
 
 <div class="content">
@@ -20,8 +29,9 @@
     <form method="POST">
         {% csrf_token %}
         {{ form|crispy }}
-        <button type="submit" class="btn btn-dark">register</button>
-        <button type="reset" class="btn btn-dark">reset</button>
+        <p>Did you remember that you have an account? Click <a href="login/">here</a></p>
+        <button type="submit" class="btn btn-dark">Register</button>
+        <button type="reset" class="btn btn-dark">Reset</button>
     </form>
 </div>
 {% endblock %}

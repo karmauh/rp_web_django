@@ -20,6 +20,13 @@
         top: 30%;
     }
 
+    h6 {
+        font-size: larger;
+        color: grey;
+        position: absolute;
+        top: 33%;
+    }
+
     a {
         color: lightgray;
     }
@@ -34,7 +41,11 @@
 <div class="content">
     <h3>Welcome to the RP web!</h3>
     Here you can create your own character and write new stories of your own.
+    {% if user.is_authenticated == False %}
     <h5>Create your new account ➜ <a href="register/">here</a> and then your own character to start story.</h5>
+    {% else %}
+    <p><h6>Welcome {{request.user.username}}! 🤭</h6></p>
+    {% endif %}
 </div>
 
 {% endblock %}

@@ -7,8 +7,8 @@ from django.http import HttpResponse, HttpResponseGone
 def home(response):
     return render(response, 'chat/home.html', {})
 
-def logs(response):
-    return render(response, 'chat/logs.html', {})
+def chat(response):
+    return render(response, 'chat/chat.html', {})
 
 def characters(response):
     return render(response, 'chat/char.html', {})
