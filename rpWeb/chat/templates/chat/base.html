@@ -60,6 +60,11 @@
           </li>
         </div>
         {% endif %}
+        {% if user.is_authenticated == True and user.username == 'root' %}
+        <li class="nav-item">
+          <a class="nav-link" href="admin/">Admin Panel</a>
+        </li>
+        {% endif %}
       </ul>
     </div>
   </nav>

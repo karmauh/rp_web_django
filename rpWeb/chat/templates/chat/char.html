@@ -1,3 +1,47 @@
 {% extends 'chat/base.html' %}
 
 {% block title %} characters {% endblock %}
+
+{% block content %}
+<style>
+    .user-not-login {
+        font-size: 40px;
+        line-height: 70px;
+        padding: 100px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: whitesmoke;
+        background-color:rgb(18, 17, 16);
+    }
+
+    .user-not-loginh5 {
+        color: grey;
+        position: absolute;
+        top: 30%;
+    }
+
+    .user-not-logina {
+        color: lightgray;
+    }
+
+    .user-not-logina:hover {
+        text-decoration: underline;
+        color: grey;
+    }
+
+</style>
+
+
+{% if not user.is_authenticated %}
+<div class="user-not-login">
+    <p class="user-not-loginh5">
+        If you want to see this content <br>
+        You must to login ➜ <a href="{% url 'register' %}" class="user-not-logina">here</a>,<br>
+        Or create an account ➜ <a href="{% url 'register' %}" class="user-not-logina">here</a>.
+    </p>
+</div>
+{% else %}
+<div class="content">
+    test
+</div>
+{% endif %}
+{% endblock %}
