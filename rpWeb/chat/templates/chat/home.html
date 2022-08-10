@@ -1,0 +1,40 @@
+{% extends 'chat/base.html' %}
+
+{% block title %} home {% endblock %}
+
+{% block content %} 
+<style>
+
+    .content {
+        font-size: 40px;
+        line-height: 70px;
+        padding: 100px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: whitesmoke;
+        background-color:rgb(18, 17, 16);
+    }
+
+    h5 {
+        color: grey;
+        position: absolute;
+        top: 30%;
+    }
+
+    a {
+        color: lightgray;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: lightgray;
+    }
+
+</style>
+
+<div class="content">
+    <h3>Welcome to the RP web!</h3>
+    Here you can create your own character and write new stories of your own.
+    <h5>Create your new account ➜ <a href="register/">here</a> and then your own character to start story.</h5>
+</div>
+
+{% endblock %}
