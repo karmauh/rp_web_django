@@ -1,7 +1,9 @@
+from pyexpat import model
 from urllib import response
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseGone
 from .models import *
+from django.views.generic import CreateView, DetailView
 
 # Create your views here.
 
@@ -14,6 +16,8 @@ def chat(response):
 def characters(response):
     data = Character.objects.all()
     return render(response, 'chat/char.html', {'data': data})
-
-def create(response):
-    return render(response, 'chat/create.html')
+    
+class createCharacter(CreateView):
+    model = Character
+    template_name = 'chat/create.html'
+    fields = '__all__'

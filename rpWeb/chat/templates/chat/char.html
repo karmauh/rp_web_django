@@ -58,6 +58,10 @@
         color: lightgray;
     }
 
+    .content2 {
+        position: absolute;
+        width: 500px;
+    }
 </style>
 {% if user.is_authenticated == False %}
 <div class="user-not-login">
@@ -78,25 +82,38 @@
 
         <p class="list">List of characters: ↓</p>
 
-        <hr style="background-color: white;">
-        {% for i in data %}
-            <a href="{% url 'characters' %}"><p><h5 style="color: grey;">Creator's name: {{i.user }}</h5></p></a>
-            <p><h5>First name: {{i.first_name }}</h5></p>
-            <p><h5 style="color: grey;">
-                {% if i.last_name == '.' or i.last_name == '-' or i.last_name == '---' or i.last_name == '--'%}
-                    Last name: (nieznane)
-                {% endif %}
-            </h5></p>
-            <p><h5>Age: {{i.age }}</h5></p>
-            <p><h5 style="color: grey;">Race: {{i.race }}</h5></p>
-            <p><h5>Appearance: {{i.appearance }}</h5></p>
-            <p><h5 style="color: grey;">Short hisotry: {{i.short_hisotry }}</h5></p>
+        <div class="content2">
             <hr style="background-color: whitesmoke;">
-        {% endfor %}
-
+            <br>
+            {% for i in data %}
+                <a href="{% url 'characters' %}"><p><h5 style="color: grey;">Creator's name: {{i.user }}</h5></p></a>
+                <p><h5>First name: {{i.first_name }}</h5></p>
+                <p><h5 style="color: grey;">
+                    {% if i.last_name == '.' or i.last_name == '-' or i.last_name == '---' or i.last_name == '--'%}
+                        Last name: (nieznane)
+                    {% endif %}
+                </h5></p>
+                <p><h5>Age: {{i.age }}</h5></p>
+                <p><h5 style="color: grey;">Race: {{i.race }}</h5></p>
+                <p><h5>Appearance: {{i.appearance }}</h5></p>
+                <p><h5 style="color: grey;">Short hisotry: {{i.short_hisotry }}</h5></p>
+                <br>
+                <hr style="background-color: whitesmoke;">
+            {% endfor %}
+            
+        </div>
     </div>
 </div>
 {% endif %}
 
+</div>
+
+<div class="footer" style="position: absolute; top: 145%; left: 42%;">
+    <footer class="bg-light text-center text-lg-start">
+        <div class="text-center p-3" style="background-color: rgb(18, 17, 16)">
+          © 2022 Copyright:
+          <a class="text-dark">bozko.com</a>
+        </div>
+    </footer>
 </div>
 {% endblock %}
