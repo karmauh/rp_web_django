@@ -24,6 +24,7 @@ urlpatterns = [
     path('register/', vR.register, name='register'),
     path('', home, name='home'),
     path('chat/', chat, name='chat'),
+    path('create/', create, name='create'),
     path('characters/', characters, name='characters'),
     path('', include('django.contrib.auth.urls')),
 ]
