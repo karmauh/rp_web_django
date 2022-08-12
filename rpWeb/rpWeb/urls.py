@@ -17,14 +17,19 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from chat.views import *
 from register import views as vR
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', vR.register, name='register'),
     path('', home, name='home'),
     path('chat/', chat, name='chat'),
-    path('create', createCharacter.as_view(), name='create'),
     path('characters/', characters, name='characters'),
+    path('create', createCharacter.as_view(), name='create'),
+    path('characters/', create_home, name='create_home'),
     path('', include('django.contrib.auth.urls')),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

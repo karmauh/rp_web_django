@@ -64,7 +64,7 @@
 {% else %}
 <div class="all">
     <h1>Create character</h1>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form|crispy }}
         <button type="submit" class="btn btn-dark"><h4>create</h4></button>
@@ -74,11 +74,11 @@
 <div class="footer" style="position: absolute; top: 145%; left: 42%;">
     <footer class="bg-light text-center text-lg-start">
         <div class="text-center p-3" style="background-color: rgb(18, 17, 16)">
-          © 2022 Copyright:
-          <a class="text-dark">bozko.com</a>
+            
+            <a class="text-dark"></a>
         </div>
     </footer>
-    </div>
+</div>
 {% endif %}
 
 {% endblock %}

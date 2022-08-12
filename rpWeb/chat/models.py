@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
@@ -12,9 +13,7 @@ class Character(models.Model):
     race = models.CharField(max_length=100, null=True)
     appearance = models.TextField(max_length=500, null=True)
     short_hisotry = models.TextField(max_length=500, null=True)
+    img = models.ImageField(null=True, blank=True, upload_to='images/')
         
     def __str__(self):
         return self.first_name + ' | ' + str(self.user)
-    
-    def get_absolute_url(self):
-        return reverse('app_name : create') #do naprwy
