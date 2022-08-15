@@ -88,17 +88,17 @@
             <hr style="background-color: whitesmoke;">
             {% for i in data %}
                 <br>
-                <a href="{% url 'characters' %}"><p><h5 style="color: grey;">Creator's name: {{i.user }}</h5></p></a>
-                <p><h5>First name: {{i.first_name }}</h5></p>
+                <a href="{% url 'characters' %}"><p><h5 style="color: grey;">Creator's name: {{ i.author }}</h5></p></a>
+                <p><h5>First name: {{ i.first_name }}</h5></p>
                 <p><h5 style="color: grey;">
                     {% if i.last_name == '' or i.last_name == 'nieznane' or i.last_name == '.' or i.last_name == '-' or i.last_name == '---' or i.last_name == '--'%}
                         Last name: (nieznane)
                     {% endif %}
                 </h5></p>
-                <p><h5>Age: {{i.age }}</h5></p>
-                <p><h5 style="color: grey;">Race: {{i.race }}</h5></p>
-                <p><h5>Appearance: {{i.appearance }}</h5></p>
-                <p><h5 style="color: grey;">Short hisotry: {{i.short_hisotry }}</h5></p>
+                <p><h5>Age: {{ i.age }}</h5></p>
+                <p><h5 style="color: grey;">Race: {{ i.race }}</h5></p>
+                <p><h5>Appearance: {{ i.appearance }}</h5></p>
+                <p><h5 style="color: grey;">Short hisotry: {{ i.short_hisotry }}</h5></p>
                 <hr>
                 {% if i.img %}
                 <div class="text-center">

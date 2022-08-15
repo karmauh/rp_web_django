@@ -6,7 +6,7 @@ from django.urls import reverse
 # Create your models here.
 
 class Character(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='character', null=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, default=User)
     first_name = models.CharField(max_length=200, null=True)
     last_name = models.CharField(max_length=200, null=True)
     age = models.DecimalField(max_digits=12, decimal_places=0, null=True)
@@ -16,4 +16,4 @@ class Character(models.Model):
     img = models.ImageField(null=True, blank=True, upload_to='images/')
         
     def __str__(self):
-        return self.first_name + ' | ' + str(self.user)
+        return self.first_name + ' | ' + str(self.author)
