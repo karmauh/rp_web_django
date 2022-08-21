@@ -1,5 +1,3 @@
-from pyexpat import model
-from urllib import response
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseGone
 from .models import *
@@ -20,7 +18,7 @@ def characters(request):
     file = Character(request.FILES)
     return render(request, 'chat/char.html', {'data': data, 'file': file})
 
- 
+
 class createCharacter(SuccessMessageMixin ,CreateView):
     model = Character
     template_name = 'chat/create.html'
